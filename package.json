@@ -1,0 +1,33 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "author": {
+    "name": "Dmitry Melnikov",
+    "email": "d.dash.mv@gmail.com"
+  },
+  "scripts": {
+    "build:push": "cd app && npm run build:push",
+    "build": "cd app && npm run build",
+    "cleanup": "rm -rf node_modules && rm -rf server/node_modules && rm -rf app/node_modules && rm package-lock.json && rm server/package-lock.json && rm app/package-lock.json",
+    "dev": "concurrently \"npm run start:server:dev\" \"npm run start:app:dev\"",
+    "install:app": "cd app && npm i",
+    "install:server": "cd server && npm i",
+    "lint:app": "cd app && npm run lint",
+    "lint:server": "cd server && npm run lint",
+    "lint": "npm run lint:app && npm run lint:server",
+    "postinstall": "npm run install:app && npm run install:server",
+    "start:app:dev": "cd app && npm run start",
+    "start:server:dev": "cd server && npm run dev",
+    "start": "cd server && npm run start",
+    "start:clean":"npm i && npm run build && npm run start"
+  },
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "husky": "^4.3.0",
+    "ncp": "^2.0.0"
+  },
+  "engines": {
+    "node": ">12.0.0 <13.0.0",
+    "npm": ">6.10.0 <7.0.0"
+  }
+}

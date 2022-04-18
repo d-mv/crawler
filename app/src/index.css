@@ -1,0 +1,12 @@
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  color: #415364;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: #415364;
+}
